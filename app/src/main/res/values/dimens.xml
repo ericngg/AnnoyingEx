@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="nameSize">50sp</dimen>
+    <dimen name="secondarySize">20sp</dimen>
+    <dimen name="buttonSize">170dp</dimen>
+    <dimen name="buttonBottomMargin">90dp</dimen>
+    <dimen name="center">189dp</dimen>
+    <dimen name="spacing">100dp</dimen>
+    <dimen name="spacing2">5dp</dimen>
+</resources>
