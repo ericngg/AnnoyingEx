@@ -18,12 +18,12 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline" />
 
     <Button
-        android:id="@+id/btnCancel"
+        android:id="@+id/btnBlock"
         android:layout_width="@dimen/buttonSize"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin"
         android:layout_marginBottom="@dimen/buttonBottomMargin"
-        android:text="Cancel"
+        android:text="Block"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing"
         android:text=""
+        android:gravity="center"
         android:textColor="@color/red"
         android:textSize="@dimen/secondarySize"
         app:layout_constraintEnd_toEndOf="parent"

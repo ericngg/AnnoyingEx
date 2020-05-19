@@ -9,9 +9,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import java.time.LocalDate
 import java.time.LocalDateTime
-import java.util.*
 
 class AnnoyingExNotificationManager(private val context: Context) {
 
@@ -27,6 +25,7 @@ class AnnoyingExNotificationManager(private val context: Context) {
     }
 
 
+    // Creates the notification
     @RequiresApi(Build.VERSION_CODES.O)
     fun postItNote(content: String) {
         val mainActivity = Intent(context, MainActivity::class.java).apply {
@@ -51,6 +50,7 @@ class AnnoyingExNotificationManager(private val context: Context) {
         index = index.inc()
     }
 
+    // Helper method that creates notification channel
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Text Notifications"

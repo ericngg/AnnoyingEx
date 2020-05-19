@@ -7,15 +7,15 @@ import androidx.annotation.RequiresApi
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 
-class ExWorker(private val context: Context, workParams: WorkerParameters): Worker(context, workParams) {
+class ExtraExWorker(private val context: Context, workParams: WorkerParameters): Worker(context, workParams) {
 
     private val notificationManager = (applicationContext as AnnoyingExApp).annoyingExNotificationManager
     private val apiManager = (applicationContext as AnnoyingExApp).apiManager
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun doWork(): Result {
-        // Creates notification
-        notificationManager.postItNote(apiManager.returnRandomMessage())
+        // Refetches data
+        apiManager.fetchData()
 
         return Result.success()
     }

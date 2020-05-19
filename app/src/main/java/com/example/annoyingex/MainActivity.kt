@@ -8,7 +8,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnHWGA : Button
-    private lateinit var btnCancel : Button
+    private lateinit var btnBlock : Button
 
     private lateinit var tvDate : TextView
     private lateinit var tvText : TextView
@@ -20,30 +20,39 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnHWGA = findViewById(R.id.btnHWGA)
-        btnCancel = findViewById(R.id.btnCancel)
+        btnBlock = findViewById(R.id.btnBlock)
         tvDate = findViewById(R.id.tvDate)
         tvText = findViewById(R.id.tvText)
         annoyingExApp = application as AnnoyingExApp
 
+        // Fetch messages
         httpCall()
 
+        // Here we go again onClick
         btnHWGA.setOnClickListener {
             annoyingExApp.annoyingExManager.startFunction()
         }
 
-        btnCancel.setOnClickListener {
+        // Block onClick
+        btnBlock.setOnClickListener {
             annoyingExApp.annoyingExManager.stopWork()
         }
 
 
-        val message = intent.getStringExtra("text")
-        val date = intent.getStringExtra("time")
-
-        tvText.text = message
-        tvDate.text = date
+        // Updates message fields
+        updateFields()
     }
 
+    // Helper method for http request
     private fun httpCall() {
         annoyingExApp.apiManager.fetchData()
+    }
+
+    // Helper method for updating message fields
+    private fun updateFields() {
+        val message = intent.getStringExtra("text")
+        val date = intent.getStringExtra("time")
+        tvText.text = message
+        tvDate.text = date
     }
 }

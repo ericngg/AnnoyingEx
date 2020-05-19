@@ -21,6 +21,7 @@ class ApiManager(context: Context) {
         const val TAG: String = "http_request"
     }
 
+    // Fetches data with http request
     fun fetchData() {
         val url = "https://raw.githubusercontent.com/echeeUW/codesnippets/master/ex_messages.json"
 
@@ -35,6 +36,7 @@ class ApiManager(context: Context) {
         queue.add(request)
     }
 
+    // Returns a random message from the http request response or a default message
     fun returnRandomMessage(): String {
         return if (success) {
             val random = (0..messages.length()).random()
